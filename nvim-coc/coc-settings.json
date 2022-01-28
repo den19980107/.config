@@ -1,0 +1,22 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"html",
+		"javascript",
+		"javascript.jsx",
+		"json",
+		"typescript",
+		"typescriptreact",
+		"prisma"
+	],
+	"prettier.tabWidth": 4,
+	"prettier.trailingComma": "none",
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.semi": true,
+	"prettier.printWidth": 120,
+	"omnisharp.version": "v1.37.3",
+	"omnisharp.trace.server": "information",
+	"omnisharp.debug.server": true
+}
