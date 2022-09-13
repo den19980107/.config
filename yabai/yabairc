@@ -5,11 +5,11 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # ====== Variables =============================
 
-gaps_top="12"
-gaps_bottom="12"
-gaps_left="12"
-gaps_right="12"
-gaps_inner="12"
+gaps_top="10"
+gaps_bottom="10"
+gaps_left="10"
+gaps_right="10"
+gaps_inner="10"
 
 
 
@@ -50,7 +50,7 @@ yabai -m config auto_balance                off
 
 # yabai -m config window_border on
 # yabai -m config window_border_width 4
-# yabai -m config active_window_border_color "0xffffff7f"
+# yabai -m config active_window_border_color "0xffdddddd"
 # yabai -m config normal_window_border_color "0xff555555"
 # yabai -m config insert_feedback_color "0xE02d74da"
 
@@ -59,27 +59,35 @@ yabai -m config auto_balance                off
 
 
 yabai -m rule --add label=iTerm2 app="^iTerm$" space=1
+yabai -m rule --add label=kitty app="^kitty$" space=1
 yabai -m rule --add label=VsCode app="^Visual Studio Code$" space=1
 yabai -m rule --add label=Rider app="^Rider$" space=1
 
 yabai -m rule --add label=safari app="^Safari$" space=2
-yabai -m rule --add label=brave app="^Brave$" space=2
+yabai -m rule --add label=brave app="^Brave$" space=2 border=off
 yabai -m rule --add label=chrome app="^Google Chrome$" space=2
 
-yabai -m rule --add label=sourcetree app="^Sourcetree$" space=3
+yabai -m rule --add label=line app="^LINE$" space=3
+yabai -m rule --add label=wechat app="^WeChat$" space=3
+yabai -m rule --add label=iota app="^iota$" space=3
+yabai -m rule --add label=slack app="^Slack$" space=3
+yabai -m rule --add label=teams app="^Microsoft Teams$" space=3
 
-yabai -m rule --add label=line app="^LINE$" space=4
-yabai -m rule --add label=iota app="^iota$" space=4
+yabai -m rule --add label=sourcetree app="^Sourcetree$" space=4
 
-yabai -m rule --add label=notion app="^Notion$" space=5
+yabai -m rule --add label=outlook app="^Microsoft Outlook$" space=5
 yabai -m rule --add label=typora app="^Typora$" space=5
+yabai -m rule --add label=postman app="^Postman$" space=5
 
-yabai -m rule --add label=spotify app="^Spotify$" space=6
 yabai -m rule --add label=sqlpro app="^SQLPro Studio$" space=6
+yabai -m rule --add label=studio3t app="^Studio 3T$" space=6
+
+yabai -m rule --add label=notion app="^Notion$" space=7
+yabai -m rule --add label=spotify app="^Spotify$" space=8
 
 # 临时性的App 也就是manage=off不受到yabai平铺式的限制，之前怎么弹出来就怎么弹出来
 yabai -m rule --add label="Docker" app="^Docker$" manage=off
-yabai -m rule --add label="1Password 7" app="^1Password 7$" manage=off
+yabai -m rule --add label="1Password" app="^1Password$" manage=off
 yabai -m rule --add label="Browserosaurus" app="^Browserosaurus$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="Alfred Preferences" app="^Alfred Preferences$" manage=off
@@ -98,3 +106,9 @@ yabai -m rule --add label="Time Out" app="Time Out" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
 yabai -m rule --add label="VirtualBox" app="^VirtualBox$" manage=off
 yabai -m rule --add label="Stats" app="^Stats$" manage=off
+yabai -m rule --add label="FortiClient" app="^FortiClient$" manage=off
+yabai -m rule --add label="Spark" app="^Spark$" manage=off
+yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
+yabai -m rule --add label="Messenger" app="^Messenger$" manage=off
+yabai -m rule --add label="SpeedTest" app="^Speedtest$" manage=off
+yabai -m rule --add label="Line Sticker" app="^LINE$" title="^$" manage=off

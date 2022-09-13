@@ -1,0 +1,1 @@
+exec /Applications/kitty.app

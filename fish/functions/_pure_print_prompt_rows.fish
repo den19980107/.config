@@ -1,0 +1,1 @@
+/Users/den19980107/.config/fish/functions/theme-pure/functions/_pure_print_prompt_rows.fish

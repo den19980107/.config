@@ -1,7 +1,5 @@
 require("bufferline").setup {
-    options = {
-        offsets = { { filetype = "NvimTree", text = "", padding = 1 } }
-    }
+    options = {offsets = {{filetype = "NvimTree", text = "File Explorer"}}}
 }
 vim.cmd [[
 nnoremap <silent><TAB> :BufferLineCycleNext<CR>
