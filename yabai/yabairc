@@ -28,7 +28,7 @@ yabai -m config bottom_padding              "${gaps_bottom}"
 yabai -m config left_padding                "${gaps_left}"
 yabai -m config right_padding               "${gaps_right}"
 yabai -m config window_gap                  "${gaps_inner}"
-# yabai -m config external_bar all:27:0
+# yabai -m config external_bar all:39:0
 
 yabai -m config mouse_follows_focus         off
 yabai -m config focus_follows_mouse         off
@@ -49,10 +49,11 @@ yabai -m config auto_balance                off
 # ====== Border settings =======================
 
 # yabai -m config window_border on
-# yabai -m config window_border_width 4
-# yabai -m config active_window_border_color "0xffdddddd"
-# yabai -m config normal_window_border_color "0xff555555"
-# yabai -m config insert_feedback_color "0xE02d74da"
+# yabai -m config window_border_width 2
+# yabai -m config active_window_border_color "0xffe1e3e4"
+# yabai -m config normal_window_border_color "0xff2a2f38"
+# yabai -m config insert_feedback_color "0xff9dd274"
+# yabai -m config window_border_radius -1
 
 
 
@@ -79,8 +80,8 @@ yabai -m rule --add label=outlook app="^Microsoft Outlook$" space=5
 yabai -m rule --add label=typora app="^Typora$" space=5
 yabai -m rule --add label=postman app="^Postman$" space=5
 
-yabai -m rule --add label=sqlpro app="^SQLPro Studio$" space=6
 yabai -m rule --add label=studio3t app="^Studio 3T$" space=6
+yabai -m rule --add label=studio3t app="^Google Chrome$" title="MQTTBox" space=6
 
 yabai -m rule --add label=notion app="^Notion$" space=7
 yabai -m rule --add label=spotify app="^Spotify$" space=8
@@ -98,9 +99,8 @@ yabai -m rule --add label="Fantastical" app="Fantastical" manage=off
 yabai -m rule --add label="Finder Main" app="^Finder$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
-yabai -m rule --add label="系統偏好設定" app="^系統偏好設定$" manage=off
+yabai -m rule --add label="System Settings" app="^System Settings$" manage=off
+yabai -m rule --add label="系統設定" app="^系統設定$" manage=off
 yabai -m rule --add label="The Unarchiver" app="^The Unarchiver$" manage=off
 yabai -m rule --add label="Time Out" app="Time Out" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
@@ -111,4 +111,4 @@ yabai -m rule --add label="Spark" app="^Spark$" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
 yabai -m rule --add label="Messenger" app="^Messenger$" manage=off
 yabai -m rule --add label="SpeedTest" app="^Speedtest$" manage=off
-yabai -m rule --add label="Line Sticker" app="^LINE$" title="^$" manage=off
+yabai -m rule --add label="Not Line Main Window" app="^LINE$" title!="^LINE$" manage=off

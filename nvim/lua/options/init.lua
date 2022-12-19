@@ -27,6 +27,7 @@ vim.o.cursorline = true
 vim.wo.signcolumn = "yes"
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
+vim.o.ch = 1
 -- vim.o.softtabstop = 2
 vim.o.shiftwidth = 4
 vim.bo.shiftwidth = 4
@@ -38,3 +39,5 @@ vim.bo.smartindent = true
 -- vim.bo.expandtab = true
 
 vim.cmd [[au BufReadPost *.cshtml set syntax=html]]
+vim.cmd [[au FileType graphql setlocal shiftwidth=4]]
+vim.cmd [[au FileType yaml setlocal shiftwidth=4]]

@@ -101,4 +101,5 @@ return require('packer').startup(function(use)
         config = "require('nvim-scrollbar-config')"
     }
     use {'karb94/neoscroll.nvim', config = "require('neoscroll-config')"}
+    use {'edluffy/hologram.nvim', config = "require('hologram-config')"}
 end)

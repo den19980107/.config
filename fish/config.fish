@@ -30,8 +30,11 @@ starship init fish | source
 ### kubectl
 kubectl completion fish | source
 export KUBE_EDITOR=nvim
-alias kubectl="kubecolor"
+# alias kubectl="kubecolor"
 
 ### GO
 export GOPATH=/Users/den19980107/go
 export PATH="$GOPATH/bin:$PATH"
+
+### Picgo
+export PATH="/user/local/bin/picgo:$PATH"

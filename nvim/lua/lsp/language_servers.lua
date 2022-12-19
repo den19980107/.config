@@ -32,7 +32,7 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "tsserver" then
         opts = vim.tbl_deep_extend("force", {
             on_attach = function(client)
-                client.resolved_capabilities.document_formatting = false
+                client.server_capabilities.documentFormattingProvider = false
             end
         }, opts)
     end
