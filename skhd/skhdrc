@@ -70,10 +70,7 @@ shift + alt - space : yabai -m window --toggle float
 
 # Restart Yabai
 shift + cmd + alt - r :
-    /usr/bin/env osascript <<< \
-        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai" \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.spacebar"
+    osascript -e "display notification \"Restarting Yabai\" with title \"Yabai\"" && yabai --stop-service && yabai --start-service
 
 # Make window native fullscreen
 shift + alt - f : yabai -m window --toggle zoom-fullscreen

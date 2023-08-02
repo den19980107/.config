@@ -38,3 +38,16 @@ export PATH="$GOPATH/bin:$PATH"
 
 ### Picgo
 export PATH="/user/local/bin/picgo:$PATH"
+
+### Cargo
+set PATH $HOME/.cargo/bin $PATH
+
+### Esp32
+export LIBCLANG_PATH="/Users/den19980107/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221201-aarch64-apple-darwin/esp-clang/lib/"
+export PATH="/Users/den19980107/.espressif/tools/xtensa-esp32-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:/Users/den19980107/.espressif/tools/xtensa-esp32s2-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:/Users/den19980107/.espressif/tools/xtensa-esp32s3-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:$PATH"
+
+### Python2
+export PATH="$HOME/.pyenv/shims:$PATH"
+
+
+source /Users/den19980107/.docker/init-fish.sh || true # Added by Docker Desktop

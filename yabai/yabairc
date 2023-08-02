@@ -65,7 +65,7 @@ yabai -m rule --add label=VsCode app="^Visual Studio Code$" space=1
 yabai -m rule --add label=Rider app="^Rider$" space=1
 
 yabai -m rule --add label=safari app="^Safari$" space=2
-yabai -m rule --add label=brave app="^Brave$" space=2 border=off
+yabai -m rule --add label=brave app="^Brave Browser$" space=2 
 yabai -m rule --add label=chrome app="^Google Chrome$" space=2
 
 yabai -m rule --add label=line app="^LINE$" space=3
@@ -76,12 +76,13 @@ yabai -m rule --add label=teams app="^Microsoft Teams$" space=3
 
 yabai -m rule --add label=sourcetree app="^Sourcetree$" space=4
 
-yabai -m rule --add label=outlook app="^Microsoft Outlook$" space=5
-yabai -m rule --add label=typora app="^Typora$" space=5
 yabai -m rule --add label=postman app="^Postman$" space=5
+yabai -m rule --add label=MqttExplorer app="^MQTT Explorer$" space=5
+yabai -m rule --add label=AnotherRedisDesktopManager app="^Another Redis Desktop Manager$" space=5
 
 yabai -m rule --add label=studio3t app="^Studio 3T$" space=6
 yabai -m rule --add label=studio3t app="^Google Chrome$" title="MQTTBox" space=6
+yabai -m rule --add label=outlook app="^Microsoft Outlook$" space=6
 
 yabai -m rule --add label=notion app="^Notion$" space=7
 yabai -m rule --add label=spotify app="^Spotify$" space=8
