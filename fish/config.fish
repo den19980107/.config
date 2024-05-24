@@ -42,12 +42,17 @@ export PATH="/user/local/bin/picgo:$PATH"
 ### Cargo
 set PATH $HOME/.cargo/bin $PATH
 
-### Esp32
+### Esp32 Cargo
 export LIBCLANG_PATH="/Users/den19980107/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221201-aarch64-apple-darwin/esp-clang/lib/"
 export PATH="/Users/den19980107/.espressif/tools/xtensa-esp32-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:/Users/den19980107/.espressif/tools/xtensa-esp32s2-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:/Users/den19980107/.espressif/tools/xtensa-esp32s3-elf-gcc/8_4_0-esp-2021r2-patch3-aarch64-apple-darwin/bin/:$PATH"
 
 ### Python2
 export PATH="$HOME/.pyenv/shims:$PATH"
 
+### Advantech Worker RawData Checker
+export PATH="/Users/den19980107/Documents/playground/go-playground/worker-raw-data-correctness-checker:$PATH"
+
+### Esp32 idf (type get_idf at command line to use idf.py)
+alias get_idf='. $HOME/esp/esp-idf/export.fish'
 
 source /Users/den19980107/.docker/init-fish.sh || true # Added by Docker Desktop

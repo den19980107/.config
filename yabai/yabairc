@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-sudo yabai  --load-sa
+sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# 避免 focus 被 teams 搶走
+yabai -m signal --add event=space_changed \
+	action='/Users/den19980107/.config/yabai/scripts/defeat-teams.sh'
 
 # ====== Variables =============================
 
@@ -11,40 +14,36 @@ gaps_left="10"
 gaps_right="10"
 gaps_inner="10"
 
-
-
-
 # ====== Tiling settings =======================
 
 # 使用 font-awesome 替代罗马数字
 
-
-yabai -m config layout                      bsp
+yabai -m config layout bsp
 
 # bar settings
 
-yabai -m config top_padding                 "${gaps_top}"
-yabai -m config bottom_padding              "${gaps_bottom}"
-yabai -m config left_padding                "${gaps_left}"
-yabai -m config right_padding               "${gaps_right}"
-yabai -m config window_gap                  "${gaps_inner}"
+yabai -m config top_padding "${gaps_top}"
+yabai -m config bottom_padding "${gaps_bottom}"
+yabai -m config left_padding "${gaps_left}"
+yabai -m config right_padding "${gaps_right}"
+yabai -m config window_gap "${gaps_inner}"
 # yabai -m config external_bar all:39:0
 
-yabai -m config mouse_follows_focus         off
-yabai -m config focus_follows_mouse         off
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
 
-yabai -m config mouse_modifier              fn
-yabai -m config mouse_action1               move
-yabai -m config mouse_action2               resize
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
 
-yabai -m config window_topmost              off
-yabai -m config window_opacity              off
-yabai -m config window_shadow               float
+yabai -m config window_topmost off
+yabai -m config window_opacity off
+yabai -m config window_shadow float
 
-yabai -m config active_window_opacity       1.0
-yabai -m config normal_window_opacity       0.9
-yabai -m config split_ratio                 0.5
-yabai -m config auto_balance                off
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+yabai -m config split_ratio 0.5
+yabai -m config auto_balance off
 
 # ====== Border settings =======================
 
@@ -55,38 +54,42 @@ yabai -m config auto_balance                off
 # yabai -m config insert_feedback_color "0xff9dd274"
 # yabai -m config window_border_radius -1
 
-
-
-
-
 yabai -m rule --add label=iTerm2 app="^iTerm$" space=1
 yabai -m rule --add label=kitty app="^kitty$" space=1
 yabai -m rule --add label=VsCode app="^Visual Studio Code$" space=1
 yabai -m rule --add label=Rider app="^Rider$" space=1
 
 yabai -m rule --add label=safari app="^Safari$" space=2
-yabai -m rule --add label=brave app="^Brave Browser$" space=2 
+yabai -m rule --add label=brave app="^Brave Browser$" space=2
 yabai -m rule --add label=chrome app="^Google Chrome$" space=2
+yabai -m rule --add label=chrome app="^Arc$" space=2
 
 yabai -m rule --add label=line app="^LINE$" space=3
 yabai -m rule --add label=wechat app="^WeChat$" space=3
 yabai -m rule --add label=iota app="^iota$" space=3
 yabai -m rule --add label=slack app="^Slack$" space=3
-yabai -m rule --add label=teams app="^Microsoft Teams$" space=3
+yabai -m rule --add label=teams app="Microsoft Teams" space=3
 
 yabai -m rule --add label=sourcetree app="^Sourcetree$" space=4
 
 yabai -m rule --add label=postman app="^Postman$" space=5
-yabai -m rule --add label=MqttExplorer app="^MQTT Explorer$" space=5
-yabai -m rule --add label=AnotherRedisDesktopManager app="^Another Redis Desktop Manager$" space=5
+yabai -m rule --add label=MqttExplorer app="MQTT Explorer" space=5
+yabai -m rule --add label=RedisInsight app="^Redis$" space=5
+yabai -m rule --add label=RedisInsight app="Another Redis Desktop Manager" space=5
+yabai -m rule --add label=MongoDBCompaas app="MongoDB" space=5
+yabai -m rule --add label=TablePlus app="TablePlus" space=5
+yabai -m rule --add label=studio3t app="^Studio 3T$" space=5
 
-yabai -m rule --add label=studio3t app="^Studio 3T$" space=6
 yabai -m rule --add label=studio3t app="^Google Chrome$" title="MQTTBox" space=6
 yabai -m rule --add label=outlook app="^Microsoft Outlook$" space=6
+yabai -m rule --add label=excel app="^Microsoft Excel$" space=6
+yabai -m rule --add label=anyDesk app="^AnyDesk$" space=6
+yabai -m rule --add label=teams app="Microsoft Teams" title="^metting$" space=6
 
 yabai -m rule --add label=notion app="^Notion$" space=7
 yabai -m rule --add label=spotify app="^Spotify$" space=8
 
+yabai -m rule --add app=".*" layer=normal
 # 临时性的App 也就是manage=off不受到yabai平铺式的限制，之前怎么弹出来就怎么弹出来
 yabai -m rule --add label="Docker" app="^Docker$" manage=off
 yabai -m rule --add label="1Password" app="^1Password$" manage=off
@@ -113,3 +116,6 @@ yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
 yabai -m rule --add label="Messenger" app="^Messenger$" manage=off
 yabai -m rule --add label="SpeedTest" app="^Speedtest$" manage=off
 yabai -m rule --add label="Not Line Main Window" app="^LINE$" title!="^LINE$" manage=off
+
+# apply the rule
+yabai -m rule --apply
