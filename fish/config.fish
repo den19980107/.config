@@ -35,4 +35,5 @@ export KUBE_EDITOR=nvim
 ### GOENV
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+status is-login; and goenv init - | source
+status is-interactive; and goenv rehash
