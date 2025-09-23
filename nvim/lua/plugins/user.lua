@@ -1,6 +1,18 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
---
+
+
+-- let helm chart yaml can be parsed by gotmpl to have syntax highlighting
+vim.filetype.add({
+  extension = {
+    gotmpl = 'gotmpl',
+  },
+  pattern = {
+    [".*/templates/.*%.tpl"] = "helm",
+    [".*/templates/.*%.ya?ml"] = "helm",
+    ["helmfile.*%.ya?ml"] = "helm",
+  },
+})
 
 ---@type LazySpec
 return {
@@ -9,6 +21,14 @@ return {
     config = function()
       vim.g.go_def_mapping_enabled = 0
       vim.g.go_doc_keywordprg_enabled = 0
+      vim.g.go_term_enabled = 1
+    end,
+  },
+
+  {
+    'greggh/claude-code.nvim',
+    config = function()
+      require('claude-code').setup()
     end,
   },
 

@@ -19,7 +19,8 @@ return {
             expr = true,
             silent = true,
             desc = "Toggle comment line",
-          }
+          },
+          ["<Leader>cc"] = { ":ClaudeCode<CR>", desc = "Open ClaudeCode" }
         },
         x = {
           ["<Leader>c"] = {
