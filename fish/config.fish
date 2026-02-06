@@ -37,3 +37,15 @@ export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 status is-login; and goenv init - | source
 status is-interactive; and goenv rehash
+
+# opencode
+fish_add_path /Users/den19980107/.opencode/bin
+
+function opencode
+    # Start proxy in background if not already running
+    if not pgrep -f "node.*proxy.js" > /dev/null
+        node ~/.config/opencode/proxy.js &
+        sleep 1
+    end
+    command opencode $argv
+end

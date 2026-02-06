@@ -16,14 +16,10 @@ vim.filetype.add({
 
 ---@type LazySpec
 return {
-  {
-  'fatih/vim-go',
-    config = function()
-      vim.g.go_def_mapping_enabled = 0
-      vim.g.go_doc_keywordprg_enabled = 0
-      vim.g.go_term_enabled = 1
-    end,
-  },
+  -- vim-go is disabled due to incompatibility with macOS/Neovim 0.11+
+  -- (E519: Option not supported: noshellslash)
+  -- Use gopls via Mason + AstroLSP instead for Go development
+  { 'fatih/vim-go', enabled = false },
 
   {
     'greggh/claude-code.nvim',
@@ -31,6 +27,11 @@ return {
       require('claude-code').setup()
     end,
   },
+
+  -- Disable none-ls (not compatible with Neovim 0.11+)
+  -- Use LSP servers directly for formatting/linting instead
+  { "nvimtools/none-ls.nvim", enabled = false },
+  { "jay-babu/mason-null-ls.nvim", enabled = false },
 
 
   -- == Examples of Adding Plugins ==

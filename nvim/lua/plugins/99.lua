@@ -6,6 +6,8 @@ return {
   config = function()
     local _99 = require("99")
     _99.setup({
+      -- Use the model configured in opencode
+      model = "trendmicro/claude-4.5-opus",
       -- Auto-include AGENT.md files from project root
       md_files = { "AGENT.md" },
       completion = {
