@@ -256,3 +256,11 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = "move-node-to-workspace W"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.f5networks.EdgeClient'
+run = "layout floating"
