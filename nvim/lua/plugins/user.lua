@@ -14,6 +14,28 @@ vim.filetype.add({
   },
 })
 
+-- Auto-import for Go files on save (organize imports + format)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    -- Organize imports
+    local params = vim.lsp.util.make_range_params()
+    params.context = { only = { "source.organizeImports" } }
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+    for _, res in pairs(result or {}) do
+      for _, r in pairs(res.result or {}) do
+        if r.edit then
+          vim.lsp.util.apply_workspace_edit(r.edit, "utf-8")
+        elseif r.command then
+          vim.lsp.buf.execute_command(r.command)
+        end
+      end
+    end
+    -- Format
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 ---@type LazySpec
 return {
   -- vim-go is disabled due to incompatibility with macOS/Neovim 0.11+
@@ -23,6 +45,11 @@ return {
 
   {
     'greggh/claude-code.nvim',
+    lazy = true,  -- Don't load on startup
+    cmd = { "ClaudeCode", "ClaudeCodeChat" },  -- Load only when command is used
+    keys = {
+      { "<leader>ac", desc = "Claude Code" },
+    },
     config = function()
       require('claude-code').setup()
     end,
@@ -32,6 +59,15 @@ return {
   -- Use LSP servers directly for formatting/linting instead
   { "nvimtools/none-ls.nvim", enabled = false },
   { "jay-babu/mason-null-ls.nvim", enabled = false },
+
+  -- vim-illuminate: disable treesitter provider (not compatible with new nvim-treesitter main branch)
+  -- LSP provider still works for highlighting references
+  {
+    "RRethy/vim-illuminate",
+    opts = {
+      providers = { "lsp", "regex" },  -- Remove "treesitter" provider
+    },
+  },
 
 
   -- == Examples of Adding Plugins ==

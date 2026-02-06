@@ -3,6 +3,16 @@
 -- GitHub: https://github.com/ThePrimeagen/99
 return {
   "ThePrimeagen/99",
+  lazy = true,  -- Don't load on startup to avoid blocking
+  keys = {      -- Only load when these keys are pressed
+    { "<leader>9f", desc = "99: Fill in function" },
+    { "<leader>9p", desc = "99: Fill in function (with prompt)" },
+    { "<leader>9v", mode = "v", desc = "99: Visual prompt" },
+    { "<leader>9s", desc = "99: Stop all requests" },
+    { "<leader>9l", desc = "99: View logs" },
+    { "<leader>9n", desc = "99: Next request logs" },
+    { "<leader>9N", desc = "99: Previous request logs" },
+  },
   config = function()
     local _99 = require("99")
     _99.setup({
