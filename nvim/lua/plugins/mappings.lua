@@ -9,24 +9,13 @@ return {
           ["<C-t>"] = { ":ToggleTerm<CR>", desc = "toggle terminal"},
           ["<Tab>"] = { ":bnext<CR>", desc = "next tab" },
           ["<S-Tab>"] = { ":bprevious<CR>", desc = "previous tab" },
-          ["<Leader>c"] = {
-            function()
-              return require("Comment.api").call(
-                "toggle.linewise." .. (vim.v.count == 0 and "current" or "count_repeat"),
-                "g@$"
-              )()
-            end,
-            expr = true,
-            silent = true,
-            desc = "Toggle comment line",
-          },
+          -- Use built-in commenting (Neovim 0.11+)
+          ["<Leader>c"] = { "gcc", desc = "Toggle comment line", remap = true },
           ["<Leader>cc"] = { ":ClaudeCode<CR>", desc = "Open ClaudeCode" }
         },
         x = {
-          ["<Leader>c"] = {
-            "<Esc><Cmd>lua require('Comment.api').locked('toggle.linewise')(vim.fn.visualmode())<CR>",
-            desc = "Toggle comment",
-          }
+          -- Use built-in commenting (Neovim 0.11+) for visual mode
+          ["<Leader>c"] = { "gc", desc = "Toggle comment", remap = true },
         },
         t = {
           ["<C-t>"] = { "<C-\\><C-n>:ToggleTerm<CR>", desc = "toggle terminal"},

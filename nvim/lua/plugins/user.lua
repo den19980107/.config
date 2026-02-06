@@ -69,6 +69,9 @@ return {
     },
   },
 
+  -- Note: Comment.nvim is disabled on Neovim 0.11+ as it has built-in commenting (gc, gcc)
+  -- The <Leader>c mapping in mappings.lua uses built-in gc operator
+
 
   -- == Examples of Adding Plugins ==
 
