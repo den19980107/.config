@@ -6,3 +6,10 @@ stetic/
 xbuild/
 yarn/
 iterm2/
+gcloud/
+containers/
+btop/
+falcoctl/
+raycast/
+Autodesk/
+.DS_Store
