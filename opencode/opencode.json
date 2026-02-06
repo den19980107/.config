@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "trendmicro/claude-4.5-opus",
+  "small_model": "trendmicro/claude-4.5-haiku",
+  "provider": {
+    "trendmicro": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "TrendMicro AI",
+      "options": {
+        "baseURL": "http://localhost:8765/v1",
+        "apiKey": "${OPENCODE_API_KEY}"
+      },
+      "models": {
+        "claude-4.5-opus": {
+          "name": "Opus",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        },
+        "claude-4.5-haiku": {
+          "name": "Haiku",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        },
+        "deepseek-r1": {
+          "name": "DeepSeek R1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        }
+      }
+    }
+  }
+}
