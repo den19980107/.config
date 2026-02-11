@@ -11,15 +11,22 @@
         "apiKey": "${OPENCODE_API_KEY}"
       },
       "models": {
+        "claude-4.6-opus": {
+          "name": "claude-4.6-opus",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        },
         "claude-4.5-opus": {
-          "name": "Opus",
+          "name": "claude-4.5-opus",
           "limit": {
             "context": 200000,
             "output": 65536
           }
         },
         "claude-4.5-haiku": {
-          "name": "Haiku",
+          "name": "claude-4.5-haiku",
           "limit": {
             "context": 200000,
             "output": 65536
